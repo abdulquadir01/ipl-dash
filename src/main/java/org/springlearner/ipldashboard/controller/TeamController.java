@@ -1,5 +1,6 @@
 package org.springlearner.ipldashboard.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +9,7 @@ import org.springlearner.ipldashboard.repository.MatchRepository;
 import org.springlearner.ipldashboard.repository.TeamRepository;
 
 @RestController
+@CrossOrigin
 public class TeamController {
 
     private TeamRepository teamRepository;
@@ -22,9 +24,9 @@ public class TeamController {
     @GetMapping("/team/{teamName}")
     public Team getTeam(@PathVariable String teamName){
         Team team = this.teamRepository.findByTeamName(teamName);
-        team.setMatches(matchRepository.findLatestMatchesByTeam(teamName, 5));
+        team.setMatches(matchRepository.findLatestMatchesByTeam(teamName, 4));
         
         return team;
     }
-        
+
 }
