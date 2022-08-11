@@ -10,15 +10,17 @@ import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilde
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
-import org.springlearner.ipldashboard.model.Match;
+import org.springlearner.ipldashboard.models.Match;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 
 import javax.sql.DataSource;
+
+
+
 
 @Configuration
 @EnableBatchProcessing
@@ -31,11 +33,18 @@ public class BatchConfig {
             "umpire1", "umpire2"
     };
 
-    @Autowired
-    public JobBuilderFactory jobBuilderFactory;
+//    @Autowired
+//    public JobBuilderFactory jobBuilderFactory;
+//    @Autowired
+//    public StepBuilderFactory stepBuilderFactory;
+    private final JobBuilderFactory jobBuilderFactory;
 
-    @Autowired
-    public StepBuilderFactory stepBuilderFactory;
+    private final StepBuilderFactory stepBuilderFactory;
+
+    public BatchConfig(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory) {
+        this.jobBuilderFactory = jobBuilderFactory;
+        this.stepBuilderFactory = stepBuilderFactory;
+    }
 
     @Bean
     public FlatFileItemReader<MatchInput> reader() {
@@ -87,4 +96,5 @@ public class BatchConfig {
                 .build();
     }
 
+    
 }

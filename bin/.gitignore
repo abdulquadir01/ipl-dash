@@ -31,7 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-
-### Node Modules ###
-src/dashboard_ui/node_modules/

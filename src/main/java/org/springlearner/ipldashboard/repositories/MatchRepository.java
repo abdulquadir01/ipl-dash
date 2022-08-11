@@ -1,4 +1,4 @@
-package org.springlearner.ipldashboard.repository;
+package org.springlearner.ipldashboard.repositories;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
-import org.springlearner.ipldashboard.model.Match;
+import org.springlearner.ipldashboard.models.Match;
 
 public interface MatchRepository extends CrudRepository<Match, Long> {
     

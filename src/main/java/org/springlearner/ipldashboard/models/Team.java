@@ -1,4 +1,4 @@
-package org.springlearner.ipldashboard.model;
+package org.springlearner.ipldashboard.models;
 
 import java.util.List;
 
@@ -16,7 +16,6 @@ public class Team {
     private String teamName;
     private Long totalMatches;
     private Long totalWins;
-
     @Transient
     private List<Match> matches;
 

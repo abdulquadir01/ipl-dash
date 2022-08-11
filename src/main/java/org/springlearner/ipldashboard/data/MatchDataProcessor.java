@@ -6,7 +6,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.springframework.batch.item.ItemProcessor;
-import org.springlearner.ipldashboard.model.Match;
+import org.springlearner.ipldashboard.models.Match;
+
+
+
 
 public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
     
@@ -23,12 +26,15 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
         
         String firstInningTeam, secondInningTeam;
 
-        if("bat".equals(matchInput.getToss_winner())){
+//        Set Team1 & Team2 on the basis of innings order
+        if("bat".equals(matchInput.getToss_decision())){
             firstInningTeam = matchInput.getToss_winner();
-            secondInningTeam = matchInput.getToss_winner().equals(matchInput.getTeam1()) ? matchInput.getTeam2() : matchInput.getTeam1();
+            secondInningTeam = matchInput.getToss_winner().equals(matchInput.getTeam1())
+                    ? matchInput.getTeam2() : matchInput.getTeam1();
         }else{
             secondInningTeam = matchInput.getToss_winner();
-            firstInningTeam = matchInput.getToss_winner().equals(matchInput.getTeam1()) ? matchInput.getTeam2() : matchInput.getTeam1();
+            firstInningTeam = matchInput.getToss_winner().equals(matchInput.getTeam1())
+                    ? matchInput.getTeam2() : matchInput.getTeam1();
         }
         
         match.setTeam1(firstInningTeam);
