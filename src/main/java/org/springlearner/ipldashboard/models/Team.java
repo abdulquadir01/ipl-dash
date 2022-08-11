@@ -12,18 +12,18 @@ import javax.persistence.Transient;
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     private String teamName;
-    private long totalMatches;
-    private long totalWins;
+    private Long totalMatches;
+    private Long totalWins;
 
     @Transient
     private List<Match> matches;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getTeamName() {
@@ -32,16 +32,16 @@ public class Team {
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
-    public long getTotalMatches() {
+    public Long getTotalMatches() {
         return totalMatches;
     }
-    public void setTotalMatches(long totalMatches) {
+    public void setTotalMatches(Long totalMatches) {
         this.totalMatches = totalMatches;
     }
-    public long getTotalWins() {
+    public Long getTotalWins() {
         return totalWins;
     }
-    public void setTotalWins(long totalWins) {
+    public void setTotalWins(Long totalWins) {
         this.totalWins = totalWins;
     }
 
@@ -52,13 +52,13 @@ public class Team {
         this.matches = matches;
     }
 
-    public Team(String teamName, long totalMatches) {
-        this.teamName = teamName;
-        this.totalMatches = totalMatches;
+    public Team(){
+        // just default constructor
     }
 
-    public Team(){ 
-        // just default constructor
+    public Team(String teamName, Long totalMatches) {
+        this.teamName = teamName;
+        this.totalMatches = totalMatches;
     }
 
     @Override
@@ -66,6 +66,5 @@ public class Team {
         return "Team [teamName=" + teamName + ", totalMatches=" + totalMatches + ", totalWins=" + totalWins + "]";
     }
 
-    
-    
+
 }
