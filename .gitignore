@@ -35,3 +35,6 @@ build/
 
 ### Node Modules ###
 src/dashboard_ui/node_modules/
+
+### bin ###
+bin/
