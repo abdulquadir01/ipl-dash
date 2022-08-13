@@ -1,0 +1,22 @@
+.MatchDetailCard{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    .match-date, .match-venue, .match-result {
+        margin-top: 1rem;
+    }
+
+    .additional-details{
+        text-align: right;
+
+        & > p{
+            margin-bottom: 1rem;
+        }
+    }
+
+    
+
+}
