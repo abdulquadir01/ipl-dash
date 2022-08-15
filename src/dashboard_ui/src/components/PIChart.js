@@ -20,7 +20,7 @@ export const PIChart = ({ team }) => {
                     { title: 'Wins', value: winCount, color: '#4da375' },
                     { title: 'Losses', value: lossCount, color: '#a34d5d' }
                 ]}
-                />
+            />
             
         </div>
     );

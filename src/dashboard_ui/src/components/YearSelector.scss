@@ -1,0 +1,15 @@
+.YearSelector{
+
+    text-align: right;
+    list-style-type: none;
+
+    li {
+        font-size: 2rem;
+        padding-bottom: 0.5rem;
+        padding-right: 1rem;
+    
+    }
+    & :hover{
+        background-color: #6e6e6e;
+    }
+}

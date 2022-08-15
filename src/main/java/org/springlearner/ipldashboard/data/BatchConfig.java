@@ -33,10 +33,6 @@ public class BatchConfig {
             "umpire1", "umpire2"
     };
 
-//    @Autowired
-//    public JobBuilderFactory jobBuilderFactory;
-//    @Autowired
-//    public StepBuilderFactory stepBuilderFactory;
     private final JobBuilderFactory jobBuilderFactory;
 
     private final StepBuilderFactory stepBuilderFactory;

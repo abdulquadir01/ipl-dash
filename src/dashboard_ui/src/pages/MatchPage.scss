@@ -1,0 +1,22 @@
+.MatchPage {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 2rem;
+
+    .year-selector-title{
+        margin: 1.5rem 0 1rem;
+        text-align: right;
+        font-size: 2rem;
+        color: #fff;
+    }
+
+
+    .page-heading{
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+    .page-heading > span{
+        font-size: 2.5rem;
+    }
+
+}

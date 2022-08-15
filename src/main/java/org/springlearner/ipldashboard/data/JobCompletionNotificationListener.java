@@ -69,6 +69,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
       teamData.values().forEach(team ->{
         System.out.println(team);
       });
+      System.out.println("Data loaded successfully...");
 
 //       jdbcTemplate.query( "SELECT team1, team2, date FROM match",
 //       (rs, row) -> "Team 1 " + rs.getString(1) + " Team 2 " + rs.getString(2) + " Date " + rs.getString(3)

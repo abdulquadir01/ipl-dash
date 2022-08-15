@@ -5,15 +5,25 @@
     padding: 0.5rem;
     margin-bottom: 0.5rem;
 
+    .vs {
+        font-size: 2rem;
+        margin: 10px;
+        padding: 0 10px;
+    }
+
+    .primary-details{
+        margin: 0.5rem;
+    }
+
     .match-date, .match-venue, .match-result {
-        margin-top: 1rem;
+        margin-top: 0.75rem;
     }
 
     .additional-details{
+        margin: 0.5rem;
         text-align: right;
-
         & > p{
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
     }
 
