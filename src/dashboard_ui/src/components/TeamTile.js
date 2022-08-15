@@ -7,9 +7,12 @@ export const TeamTile = ( {teamName} ) => {
   return (
     <div className='TeamTile'>
         <p>
-            <Link to={`/teams/${teamName}`}>
+
+            {teamName}
+
+            {/* <Link to={`/teams/${teamName}`}>
                 {teamName}
-            </Link>
+            </Link> */}
         </p>    
     </div>
   )

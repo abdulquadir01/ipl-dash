@@ -1,5 +1,6 @@
 
 import { React, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { TeamTile } from '../components/TeamTile';
 
 import './HomePage.scss';
@@ -31,7 +32,12 @@ export const HomePage = () => {
       <div className='team-grid'>
             {
                 teams.map( team => 
-                  <TeamTile key={team.id} teamName={team.teamName}/>
+                  
+                  <Link to={`/teams/${team.teamName}`}>
+                    <TeamTile key={team.id} teamName={team.teamName}/>
+                  </Link>
+
+
                 )
             }
       </div>
