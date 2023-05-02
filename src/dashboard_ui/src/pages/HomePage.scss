@@ -16,7 +16,15 @@
     .TeamTile{
         font-size: 2rem;
         padding: 0.5rem;
+        background-color: #e6e6e6;
 
+        &:hover{
+            background-color: #959595;
+        }
+        
+        a {
+            text-decoration: none;
+        }
     }
 
 }

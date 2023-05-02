@@ -4,14 +4,15 @@ import { MatchDetailCard } from '../components/MatchDetailCard';
 import { YearSelector } from '../components/YearSelector';
 
 import './MatchPage.scss';
+import CustomNavbar from '../components/CustomNavbar';
 
 
 
-export const MatchPage = () => {    
-    
+
+export const MatchPage = () => {
+
     const { teamName, year } = useParams();
-
-    const  [matches, setMatches] = useState([]);
+    const [matches, setMatches] = useState([]);
 
     useEffect(
         () => {
@@ -28,18 +29,23 @@ export const MatchPage = () => {
 
 
     return (
-        <div className="MatchPage">
-            <div className='year-selector'>
-                <p className='year-selector-title'>Select Year</p>
-                <YearSelector teamName={teamName}/>
+        <div>
+
+            <CustomNavbar />
+
+            <div className="MatchPage">
+                <div className='year-selector'>
+                    <p className='year-selector-title'>Select Year</p>
+                    <YearSelector teamName={teamName} />
+                </div>
+                <div className='match-detail-section'>
+                    <p className='page-heading'><span>{teamName}</span>  matches in  <span>{year}</span></p>
+                    {
+                        matches.map(match => <MatchDetailCard key={match.id} match={match} teamName={teamName} />)
+                    }
+                </div>
+
             </div>
-            <div className='match-detail-section'>
-                <p className='page-heading'><span>{teamName}</span>  matches in  <span>{year}</span></p>
-                {
-                    matches.map(match => <MatchDetailCard key={match.id} match={match} teamName={teamName} />)
-                }
-            </div>
-           
         </div>
     );
 }

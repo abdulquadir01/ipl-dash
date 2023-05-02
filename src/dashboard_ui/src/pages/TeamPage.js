@@ -6,6 +6,10 @@ import { MatchSmallCard } from '../components/MatchSmallCard';
 import { PIChart } from '../components/PIChart';
 
 import './TeamPage.scss';
+import CustomNavbar from '../components/CustomNavbar';
+
+
+
 
 
 export const TeamPage = () => {
@@ -24,11 +28,17 @@ export const TeamPage = () => {
     }, [teamName]
   );
 
+
+
   if (!team || !team.teamName) {
     return <h1>Team not found!!!</h1>
   }
 
+
   return (
+    <div>
+    <CustomNavbar />
+
     <div className="TeamPage">
       <div className='team-name-section'>
         <h1 className='team-name'>{team.teamName} </h1>
@@ -48,6 +58,8 @@ export const TeamPage = () => {
       </div>
 
     </div>
+    </div>
+
   );
 
 }
